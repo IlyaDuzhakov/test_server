@@ -1,7 +1,9 @@
-const http = require('http');
-const ws = require('ws');
 
-const wss = new ws.Server({noServer: true});
+import http from "node:http";
+import WebSocket, { WebSocketServer } from "ws";
+
+
+const wss = new WebSocketServer({ noServer: true });
 
 function accept(req, res) {
   // все входящие запросы должны использовать websockets
